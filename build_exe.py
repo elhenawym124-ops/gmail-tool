@@ -14,6 +14,7 @@ def build():
         'main_app.py',
         '--onefile',
         '--windowed',
+        '--icon=app_icon.ico',
         '--add-data', f'{nicegui_path}{os.pathsep}nicegui',
         '--collect-all', 'nicegui',
         '--collect-all', 'uvicorn',

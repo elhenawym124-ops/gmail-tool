@@ -28,3 +28,6 @@
 - **Executable Conversion**: Successfully converted the Python-based NiceGUI app into a standalone, redistributable Windows executable (`.exe`) using PyInstaller.
 - **Data Persistence**: Refactored `logic.py` to ensure local JSON data files (tags, watchlist, credentials) are stored alongside the `.exe` rather than inside the temporary extraction folder.
 - **Build Script**: Created an automated build script (`build_exe.py`) that correctly bundles NiceGUI dependencies and assets.
+- **Critical Fix (EXE 500 Error)**: Resolved a major blocking issue where the EXE would return a 500 Internal Server Error upon launch due to race conditions in NiceGUI's default initialization. Solved by migrating the UI layout into a targeted `@ui.page('/')` function.
+- **Performance Optimization**: Switched to `native=True` and disabled `reload` for the production build to ensure a smooth, single-process experience for the end user.
+- **Robustness**: Added `multiprocessing.freeze_support()` and enhanced error logging (`crash_log.txt`) for the standalone environment.

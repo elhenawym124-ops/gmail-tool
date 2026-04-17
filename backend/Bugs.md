@@ -12,3 +12,5 @@
 - **UI Navigation Bug (2026-04-16)**: Fixed `AttributeError: module 'nicegui.ui' has no attribute 'open'` by replacing it with `ui.navigate.to(url, new_tab=True)`.
 - **Wrong Account Session Bug (2026-04-16)**: Fixed an issue where the wrong Gmail account would open if multiple accounts were in one profile. Added `authuser` targeting to the launch URL.
 - **Login Automation Blocking (2026-04-16)**: To avoid Google's "secure browser" blocking, implemented a "Guided Assistant" that fills credentials and provides copy-paste helpers instead of full robotic automation.
+- **EXE Startup 500 Error (2026-04-17)**: Fixed an Internal Server Error in the bundled EXE by wrapping the UI layout in `@ui.page('/')`. This prevents duplicate state initialization and ensures the server is ready before serving requests in the PyInstaller environment.
+- **EXE Multiprocessing Loop (2026-04-17)**: Added `multiprocessing.freeze_support()` to prevent the EXE from spawning infinite processes on Windows.
