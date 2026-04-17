@@ -15,9 +15,12 @@ def build():
         '--onefile',
         '--windowed',
         '--add-data', f'{nicegui_path}{os.pathsep}nicegui',
+        '--collect-all', 'nicegui',
+        '--collect-all', 'uvicorn',
+        '--collect-all', 'fastapi',
+        '--collect-all', 'starlette',
         '--name', 'GmailExtractorPro',
         '--clean',
-        '--icon', 'NONE', # You can add an .ico path here if you have one
     ]
     
     print(f"Building with NiceGUI from: {nicegui_path}")

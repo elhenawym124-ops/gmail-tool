@@ -556,6 +556,7 @@ def show_platform_results(platform_name, matched, unmatched):
 if __name__ == '__main__':
     import multiprocessing
     multiprocessing.freeze_support()
+    
     # Run the app
     ui.run(
         title='Gmail Extractor Pro',
