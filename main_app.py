@@ -553,12 +553,15 @@ def show_platform_results(platform_name, matched, unmatched):
     
     pr_dialog.open()
 
-# Run the app
-ui.run(
-    title='Gmail Extractor Pro',
-    native=True,
-    window_size=(1400, 900),
-    reload=False,
-    favicon='📧',
-    dark=True,
-)
+if __name__ == '__main__':
+    import multiprocessing
+    multiprocessing.freeze_support()
+    # Run the app
+    ui.run(
+        title='Gmail Extractor Pro',
+        native=True,
+        window_size=(1400, 900),
+        reload=False,
+        favicon='📧',
+        dark=True,
+    )
