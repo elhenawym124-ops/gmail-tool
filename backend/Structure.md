@@ -3,7 +3,7 @@
 ## Architecture Overview
 The application follows a clean Separation of Concerns (SoC) pattern:
 
-- **Frontend (NiceGUI)**: Handles rendering, user interactions, and state management using Quasar components and a custom Dark Premium theme.
+- **Frontend (NiceGUI + pywebview)**: Renders as a native desktop window using pywebview. Handles user interactions and state management using Quasar components and a custom Dark Premium theme.
 - **Logic Layer (logic.py)**: Encapsulates Chrome profile scanning, email extraction from `Preferences` files, and local persistence.
 - **External Integration**: Interacts directly with the Windows filesystem (`%LOCALAPPDATA%`) and uses subprocesses to launch Chrome.
 
@@ -16,7 +16,8 @@ The application follows a clean Separation of Concerns (SoC) pattern:
 ## System Diagram
 ```mermaid
 graph TD
-    User([User]) --> UI[NiceGUI Web UI]
+    User([User]) --> Window[Native Desktop Window - pywebview]
+    Window --> UI[NiceGUI UI Engine]
     UI --> Manager[ChromeAccountManager]
     Manager --> FS[Windows Filesystem]
     Manager --> Chrome[Google Chrome CLI]

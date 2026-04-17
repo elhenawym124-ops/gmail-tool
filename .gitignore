@@ -5,9 +5,17 @@ __pycache__/
 venv/
 .env
 
-# Local Data
-gmail_tags.json
-
 # IDE
 .vscode/
 .idea/
+
+# Build artifacts
+build/
+dist/
+*.spec
+*.exe
+
+# Database/Local Data
+gmail_tags.json
+gmail_watchlist.json
+gmail_credentials.json
